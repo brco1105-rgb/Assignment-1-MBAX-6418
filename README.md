@@ -4,7 +4,7 @@
 
 The final dashboard is available in [`final_dashboard.html`](final_dashboard.html).
 
-![Dashboard interface](assets/dashboard_screenshot.png)
+![Dashboard interface](assets/dashboard_screenshot1.png)
 
 ---
 
@@ -112,13 +112,17 @@ Per-class recall across the full cohort was:
 
 The strongest failure pattern is the neutral class: **32 of 50 neutral reviews were classified as negative**, while 9 were classified as positive and only 9 were classified as neutral.
 
+The final dashboard makes the class-specific performance differences especially visible. Positive and negative reviews were identified reliably, while neutral reviews were frequently pushed toward the negative class.
+
+![Final balanced three-class results](assets/dashboard_screenshot2.png)
+
 ---
 
 ## Discussion questions
 
 ### 1. Why did the lopsided run look very accurate, and what changed with balanced sampling?
 
-The first 100-review run looked incredibly accurate because **93 of the 100 benchmark labels were positive**. A classifier that ignored the review text and predicted `POSITIVE` for every row would already score 93%. The model reached 98%, but the large positive majority made the headline accuracy look significantly stronger than the evidence available for the negative class. The balanced run made the model evaluate an equal numbers of positive, neutral, and negative benchmark cases, which removed the ability to rely on the dominant positive class. It also introduced a separate `NEUTRAL` class, so the change from 98% to 69.33% is **not purely a sampling effect**. Both the sample design and the classification task changed. What the balanced run clearly revealed is that the model handled positive and negative reviews well but struggled to identify 3-star reviews as its own neutral textual class.
+The first 100-review run looked incredibly accurate because **93 of the 100 benchmark labels were positive**. A classifier that ignored the review text and predicted `POSITIVE` for every row would already score 93%. The model reached 98%, but the large positive majority made the headline accuracy look significantly stronger than the evidence available for the negative class. The balanced run made the model evaluate an equal number of positive, neutral, and negative benchmark cases, which removed the ability to rely on the dominant positive class. It also introduced a separate `NEUTRAL` class, so the change from 98% to 69.33% is **not purely a sampling effect**. Both the sample design and the classification task changed. What the balanced run clearly revealed is that the model handled positive and negative reviews well but struggled to identify 3-star reviews as a distinct neutral textual class.
 
 ### 2. Which classes were confused with which, and in what direction?
 
@@ -166,14 +170,17 @@ Several practical issues came up during the assignment:
 ├── README.md
 ├── final_dashboard.html
 ├── assets/
-│   └── dashboard_screenshot.png
+│   ├── dashboard_screenshot1.png
+│   └── dashboard_screenshot2.png
 ├── data/
-│   └── balanced_sample.csv
+│   ├── balanced_sample.csv
+│   └── metadata.json
 ├── prompts/
 │   ├── binary_sentiment_prompt.txt
 │   └── three_class_sentiment_emotion_prompt.txt
 ├── results/
 │   ├── balanced_raw_results.csv
+│   ├── emotion_comparison_summary.json
 │   ├── nrc_results_first100.csv
 │   ├── nrc_source_reference.json
 │   ├── step6c_confusion_matrix.csv
