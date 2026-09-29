@@ -1,0 +1,149 @@
+{
+  "reviews_compared": 100,
+  "agreement": {
+    "count": 19,
+    "percentage": 19.0,
+    "denominator": 100
+  },
+  "disagreement_including_no_label": {
+    "count": 81,
+    "percentage": 81.0,
+    "denominator": 100
+  },
+  "labeled_only": {
+    "reviews": 85,
+    "agreement_count": 19,
+    "disagreement_count": 66,
+    "agreement_percentage": 22.352941176470587,
+    "disagreement_percentage": 77.6470588235294
+  },
+  "llm_emotion_counts": {
+    "anger": 4,
+    "anticipation": 1,
+    "disgust": 0,
+    "fear": 0,
+    "joy": 59,
+    "sadness": 3,
+    "surprise": 1,
+    "trust": 32
+  },
+  "nrc_emotion_counts": {
+    "anger": 2,
+    "anticipation": 59,
+    "disgust": 1,
+    "fear": 0,
+    "joy": 21,
+    "sadness": 1,
+    "surprise": 0,
+    "trust": 1
+  },
+  "nrc_ties_including_zero": 67,
+  "nrc_nonzero_ties": 52,
+  "nrc_zero_signal_reviews": 15,
+  "matrix_row_labels_llm": [
+    "anger",
+    "anticipation",
+    "disgust",
+    "fear",
+    "joy",
+    "sadness",
+    "surprise",
+    "trust"
+  ],
+  "matrix_column_labels_nrc": [
+    "anger",
+    "anticipation",
+    "disgust",
+    "fear",
+    "joy",
+    "sadness",
+    "surprise",
+    "trust"
+  ],
+  "matrix": [
+    [
+      0,
+      3,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      35,
+      0,
+      0,
+      17,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      19,
+      1,
+      0,
+      2,
+      0,
+      0,
+      0
+    ]
+  ],
+  "matrix_included_reviews": 85,
+  "matrix_excluded_zero_signal_reviews": 15,
+  "policy": "Case-insensitive exact primary-label equality. Null NRC labels count as no agreement in full-cohort totals, not as an emotion. Matrix excludes nulls. Existing NRC tie-broken labels are used unchanged.",
+  "interpretation": "Method agreement, not accuracy: neither method is ground truth."
+}
