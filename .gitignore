@@ -1,0 +1,21 @@
+# Secrets / credentials
+.env
+*.env
+.env.*
+
+# Local downloaded source data / lexicon caches
+Gift_Cards.jsonl.gz
+lexicon/
+data/Gift_Cards.jsonl.gz
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,67 @@
+{
+  "reviews_total": 150,
+  "valid_responses": 149,
+  "missing_or_invalid_responses": 1,
+  "correct_predictions": 104,
+  "full_cohort_accuracy": 0.6933333333333334,
+  "completed_only_accuracy": 0.697986577181208,
+  "full_cohort_balanced_accuracy": 0.6933333333333334,
+  "completed_only_balanced_accuracy": 0.6998639455782313,
+  "actual_class_counts": {
+    "POSITIVE": 50,
+    "NEUTRAL": 50,
+    "NEGATIVE": 50
+  },
+  "predicted_class_counts": {
+    "POSITIVE": 56,
+    "NEUTRAL": 13,
+    "NEGATIVE": 80,
+    "NO_RESPONSE": 1
+  },
+  "per_class_full_cohort": {
+    "POSITIVE": {
+      "actual_count": 50,
+      "correct": 47,
+      "recall_with_missing_as_not_correct": 0.94
+    },
+    "NEUTRAL": {
+      "actual_count": 50,
+      "correct": 9,
+      "recall_with_missing_as_not_correct": 0.18
+    },
+    "NEGATIVE": {
+      "actual_count": 50,
+      "correct": 48,
+      "recall_with_missing_as_not_correct": 0.96
+    }
+  },
+  "per_class_completed_only": {
+    "POSITIVE": {
+      "completed_count": 50,
+      "correct": 47,
+      "recall_completed_only": 0.94
+    },
+    "NEUTRAL": {
+      "completed_count": 50,
+      "correct": 9,
+      "recall_completed_only": 0.18
+    },
+    "NEGATIVE": {
+      "completed_count": 49,
+      "correct": 48,
+      "recall_completed_only": 0.9795918367346939
+    }
+  },
+  "neutral_destination_counts": {
+    "NEGATIVE": 32,
+    "NEUTRAL": 9,
+    "POSITIVE": 9,
+    "NO_RESPONSE": 0
+  },
+  "interpretation_notes": [
+    "The balanced sample contains 50 benchmark reviews in each sentiment class.",
+    "Neutral is the main failure mode: only 9 of 50 benchmark-neutral reviews were predicted NEUTRAL; 32 were predicted NEGATIVE and 9 POSITIVE.",
+    "The first 100-review run and the balanced three-class run are not directly comparable as a pure sampling experiment because the label definition also changed from binary to three-class.",
+    "The single missing response is preserved as NO_RESPONSE rather than silently repaired or rerun."
+  ]
+}

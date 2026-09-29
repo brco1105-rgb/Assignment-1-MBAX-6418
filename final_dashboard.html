@@ -1,0 +1,462 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gift Cards — Balanced Three-Class Sentiment Evaluation</title>
+<style>
+:root{--paper:#f4f5f1;--surface:#fff;--ink:#203334;--muted:#667675;--line:#dce5df;--navy:#143a3c;--green:#167568;--green-soft:#e8f4ef;--amber:#9b6a1f;--amber-soft:#fff4dd;--red:#a04430;--red-soft:#fff0e9;--blue:#536f86;--blue-soft:#eef3f7;--radius:14px;--font:'Segoe UI','Helvetica Neue',Arial,sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 var(--font)}.shell{max-width:1260px;margin:auto;padding:0 36px}.topbar{background:var(--navy);color:white}.topbar .shell{display:flex;justify-content:space-between;align-items:center;min-height:58px}.wordmark{font-weight:800;letter-spacing:.14em;font-size:13px}.topnote{font-size:12px;color:#d6e7e3}header{padding-top:30px}h1{font-size:32px;letter-spacing:-.03em;margin:0 0 8px}.subtitle{color:var(--muted);max-width:850px}.metrics{display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:12px;margin:26px 0 20px}.metric{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}.metric.primary{background:var(--navy);color:#fff;border-color:var(--navy)}.metric .label{font-size:12px;font-weight:700}.metric .value{font-size:34px;font-weight:800;margin:8px 0 4px}.metric small{color:var(--muted)}.primary small{color:#d6e7e3}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:18px 0}.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px}.panel h2{font-size:19px;margin:0 0 6px}.caption{color:var(--muted);font-size:12px;margin:0 0 18px}.bar-row{display:grid;grid-template-columns:70px 1fr 42px;gap:10px;align-items:center;margin:11px 0}.bar-track{height:10px;background:#e8ece9;border-radius:999px;overflow:hidden}.bar-fill{height:100%;background:var(--green)}.bar-fill.neg{background:var(--red)}.bar-fill.neu{background:var(--amber)}.compare-row{display:grid;grid-template-columns:90px 1fr 145px;gap:12px;align-items:center;margin:14px 0}.double-bars{display:grid;gap:5px}.mini{height:8px;border-radius:999px}.mini.actual{background:var(--blue)}.mini.predicted{background:var(--green)}.nums{font-size:12px;color:var(--muted);text-align:right}.matrix{width:100%;border-collapse:separate;border-spacing:6px}.matrix th{font-size:11px;text-align:left;color:var(--muted)}.matrix td{text-align:center;padding:14px 8px;border-radius:9px;background:#f2f5f3}.matrix td.hit{background:var(--green-soft);color:var(--green)}.matrix td.miss{background:var(--red-soft);color:var(--red)}.matrix td.missing{background:var(--blue-soft);color:var(--blue)}.matrix td strong{display:block;font-size:26px}.matrix td span{font-size:10px;text-transform:uppercase}.recall-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.recall-card{border:1px solid var(--line);border-radius:12px;padding:17px}.recall-card>div:first-child{display:flex;justify-content:space-between;align-items:baseline}.recall-card strong{font-size:26px}.recall-card small{display:block;color:var(--muted);margin-top:7px}.callout{background:var(--amber-soft);border:1px solid #ead8ae;border-radius:var(--radius);padding:20px;margin:18px 0}.callout strong{font-size:30px;color:var(--amber)}.filters{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}button{font:600 12px var(--font);padding:9px 12px;border:1px solid var(--line);border-radius:7px;background:white;cursor:pointer}button.active{background:var(--navy);color:white;border-color:var(--navy)}#count{margin-left:auto;align-self:center;color:var(--muted);font-size:12px}.table-wrap{background:white;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}.table-scroll{max-height:680px;overflow:auto}table.reviews{width:100%;border-collapse:collapse;min-width:850px}.reviews th{position:sticky;top:0;background:#fafbf9;text-align:left;font-size:10px;text-transform:uppercase;color:var(--muted);padding:12px;border-bottom:1px solid var(--line)}.reviews td{padding:12px;border-bottom:1px solid #edf0ee;vertical-align:top;font-size:12px}details summary{cursor:pointer;font-weight:650}.review-text{white-space:pre-wrap;margin-top:10px;color:#415252}.tag{display:inline-block;padding:4px 7px;border-radius:5px;font-size:10px;font-weight:800}.tag.positive{background:var(--green-soft);color:var(--green)}.tag.neutral{background:var(--amber-soft);color:var(--amber)}.tag.negative{background:var(--red-soft);color:var(--red)}.tag.no_response{background:var(--blue-soft);color:var(--blue)}.good{color:var(--green);font-weight:700}.bad{color:var(--red);font-weight:700}.warn{color:var(--blue);font-weight:700}footer{color:var(--muted);font-size:11px;padding:26px 0 40px}@media(max-width:850px){.metrics{grid-template-columns:1fr 1fr}.metric.primary{grid-column:1/-1}.grid2,.recall-grid{grid-template-columns:1fr}.shell{padding:0 18px}}
+</style></head><body><div class="topbar"><div class="shell"><span class="wordmark">REVIEW / LAB</span><span class="topnote">AMAZON REVIEWS 2023 · GIFT CARDS</span></div></div><header class="shell"><h1>Balanced three-class sentiment evaluation</h1><p class="subtitle">Fixed 150-review balanced sample. Benchmark: 4–5 stars = POSITIVE, 3 stars = NEUTRAL, 1–2 stars = NEGATIVE. Model input: title and text only.</p></header><main class="shell">
+<section class="metrics"><div class="metric primary"><div class="label">Overall benchmark agreement</div><div class="value">69.33%</div><small>104 correct out of 150; the one missing response is counted as not correct.</small></div><div class="metric"><div class="label">Valid responses</div><div class="value">149</div><small>of 150 reviews</small></div><div class="metric"><div class="label">Balanced accuracy</div><div class="value">69.33%</div><small>equal class weighting</small></div><div class="metric"><div class="label">Neutral recall</div><div class="value">18.00%</div><small>9 of 50</small></div><div class="metric"><div class="label">No response</div><div class="value">1</div><small>preserved, not rerun</small></div></section>
+<div class="grid2"><section class="panel"><h2>Star-rating distribution</h2><p class="caption">Balanced by three sentiment classes, not by individual star values.</p><div class="bar-row"><span>1 star</span><div class="bar-track"><div class="bar-fill" style="width:90.00%"></div></div><strong>45</strong></div><div class="bar-row"><span>2 star</span><div class="bar-track"><div class="bar-fill" style="width:10.00%"></div></div><strong>5</strong></div><div class="bar-row"><span>3 star</span><div class="bar-track"><div class="bar-fill" style="width:100.00%"></div></div><strong>50</strong></div><div class="bar-row"><span>4 star</span><div class="bar-track"><div class="bar-fill" style="width:4.00%"></div></div><strong>2</strong></div><div class="bar-row"><span>5 star</span><div class="bar-track"><div class="bar-fill" style="width:96.00%"></div></div><strong>48</strong></div></section><section class="panel"><h2>Actual vs. predicted class counts</h2><p class="caption">The model underproduced NEUTRAL and overproduced NEGATIVE.</p><div class="compare-row"><span>Positive</span><div class="double-bars"><div class="mini actual" style="width:100%"></div><div class="mini predicted" style="width:70.00%"></div></div><span class="nums">Actual 50 · Pred 56</span></div><div class="compare-row"><span>Neutral</span><div class="double-bars"><div class="mini actual" style="width:100%"></div><div class="mini predicted" style="width:16.25%"></div></div><span class="nums">Actual 50 · Pred 13</span></div><div class="compare-row"><span>Negative</span><div class="double-bars"><div class="mini actual" style="width:100%"></div><div class="mini predicted" style="width:100.00%"></div></div><span class="nums">Actual 50 · Pred 80</span></div><div class="compare-row"><span>No response</span><div class="double-bars"><div class="mini predicted" style="width:1.25%"></div></div><span class="nums">1</span></div></section></div>
+<section class="panel"><h2>Three-class confusion matrix</h2><p class="caption">Rows are benchmark classes; columns are model predictions.</p><table class="matrix"><thead><tr><th>Actual ↓ / Predicted →</th><th>Positive</th><th>Neutral</th><th>Negative</th><th>No response</th></tr></thead><tbody><tr><th>POSITIVE</th><td class="hit"><strong>47</strong><span>Positive</span></td><td class="miss"><strong>3</strong><span>Neutral</span></td><td class="miss"><strong>0</strong><span>Negative</span></td><td class="missing"><strong>0</strong><span>No Response</span></td></tr><tr><th>NEUTRAL</th><td class="miss"><strong>9</strong><span>Positive</span></td><td class="hit"><strong>9</strong><span>Neutral</span></td><td class="miss"><strong>32</strong><span>Negative</span></td><td class="missing"><strong>0</strong><span>No Response</span></td></tr><tr><th>NEGATIVE</th><td class="miss"><strong>0</strong><span>Positive</span></td><td class="miss"><strong>1</strong><span>Neutral</span></td><td class="hit"><strong>48</strong><span>Negative</span></td><td class="missing"><strong>1</strong><span>No Response</span></td></tr></tbody></table></section>
+<section class="panel" style="margin-top:18px"><h2>Recall by benchmark class</h2><div class="recall-grid"><div class="recall-card"><div><span>POSITIVE</span><strong>94.00%</strong></div><div class="bar-track"><div class="bar-fill " style="width:94.00%"></div></div><small>47 of 50 correct</small></div><div class="recall-card"><div><span>NEUTRAL</span><strong>18.00%</strong></div><div class="bar-track"><div class="bar-fill neu" style="width:18.00%"></div></div><small>9 of 50 correct</small></div><div class="recall-card"><div><span>NEGATIVE</span><strong>96.00%</strong></div><div class="bar-track"><div class="bar-fill neg" style="width:96.00%"></div></div><small>48 of 50 correct</small></div></div></section>
+<section class="callout"><strong>32 of 50</strong><p>benchmark-NEUTRAL reviews were classified as NEGATIVE. Only 9 of 50 were classified as NEUTRAL; another 9 were classified as POSITIVE.</p></section>
+<section class="panel"><h2>How to read this against the first run</h2><p>The first 100-review binary run reached <strong>98.00%</strong> agreement on a batch that was <strong>93%</strong> positive. This balanced run uses equal benchmark classes and adds NEUTRAL, so the lower three-class score cannot be attributed to balancing alone.</p></section>
+<h2>Review-level results</h2><div class="filters"><button class="active" data-filter="all">All</button><button data-filter="correct">Correct</button><button data-filter="incorrect">Incorrect</button><button data-filter="neutral-errors">Neutral errors</button><button data-filter="no-response">No response</button><span id="count">150 of 150 visible</span></div><div class="table-wrap"><div class="table-scroll"><table class="reviews"><thead><tr><th>ID</th><th>Review</th><th>Stars</th><th>Benchmark</th><th>Prediction</th><th>Status</th></tr></thead><tbody><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>1</td><td><details><summary>Love it</summary><div class="review-text">Love the ease of adding to my kindle</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>2</td><td><details><summary>Easy quick loading</summary><div class="review-text">SO easy to load these from the comfort of your home. Fast and fool proof. Thank you Amazon.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>3</td><td><details><summary>5 stars</summary><div class="review-text">It&#x27;s as described.  I would purchase this again.&lt;br /&gt;&lt;br /&gt;I&#x27;m only writing this because Amazon won&#x27;t let me just rate purchases by stars anymore... which makes me not want to rate purchases as often as I did in the past.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>4</td><td><details><summary>Too beat up to give as a gift</summary><div class="review-text">Gift card seems fine but the green card it was partially mounted to was in bad condition (bent, faded, etc).  Makes you wonder if the card will work or if the number has been stolen.  Even though it comes with a receipt, I&#x27;m still nervous to give it as a gift.</div></details></td>
+<td>2</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>5</td><td><details><summary>Great Buy</summary><div class="review-text">My friend loved this gift card and the store!</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEUTRAL" data-pred="NEUTRAL">
+<td>6</td><td><details><summary>Who sent it?</summary><div class="review-text">Nice way t send a Christmas gift. Only difficulty is no notice is included so the recipient does not know whom it came from.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag neutral">NEUTRAL</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>7</td><td><details><summary>Fun to receive</summary><div class="review-text">Birthday gift cute packaging.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>8</td><td><details><summary>Worst item ever</summary><div class="review-text">No one would let you use tbem I got stuck with 700 gift cards was able to pay directv with the</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="POSITIVE">
+<td>9</td><td><details><summary>Good</summary><div class="review-text">Good</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>10</td><td><details><summary>Hmm</summary><div class="review-text">wasnt reloaded with the correct amouny</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>11</td><td><details><summary>Doesn&#x27;t always work</summary><div class="review-text">It has a balance but can;t use in certain places</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>12</td><td><details><summary>Very nice tin</summary><div class="review-text">Very pretty presentation</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>13</td><td><details><summary>This is cool! You pay for a amazon gift card then you get a free envelope and card to go with it!</summary><div class="review-text">This is cool! You pay for a amazon gift card then you get a free envelope and card to go with it! Gift giving made easy. This is good when you want to buy gifts in advance to throw into your amazon cart or simply have on hand when you need to celebrate someones special day. The gift card is a physical card too.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>14</td><td><details><summary>Box was dented &amp; I did not get my $10 Amazon credit</summary><div class="review-text">I ordered this gift card as a Christmas present and the box was dented &amp; I did not get my $10 Amazon credit</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>15</td><td><details><summary>Lable the value.</summary><div class="review-text">We bought 3 cards of different values and we could figure out which one was what. Needs to be labeled values</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>16</td><td><details><summary>she loved it.</summary><div class="review-text">Given as a gift to a hard core QVC shopper...she loved it.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEUTRAL" data-pred="NEUTRAL">
+<td>17</td><td><details><summary>Decent novelty restaurant</summary><div class="review-text">Been here a few times, the location in Orlando. The food is alright, but over priced for what it is. Seems to not matter if they are busy or dead, always takes forever for ever step of the process. The Ice cream is very good though.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag neutral">NEUTRAL</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEUTRAL" data-pred="NEUTRAL">
+<td>18</td><td><details><summary>Just a gift</summary><div class="review-text">Was a gift</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag neutral">NEUTRAL</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>19</td><td><details><summary>Not for California.</summary><div class="review-text">No Ruby Tuesday&#x27;s in California.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEUTRAL" data-pred="NEUTRAL">
+<td>20</td><td><details><summary>Why is Amazon prompting me to review this?</summary><div class="review-text">Why is this even listed among the things Amazon wants me to review?&lt;br /&gt;I reloaded my Amazon gift card balance, that&#x27;s it.&lt;br /&gt;&lt;br /&gt;Why only three stars? Well, because if you pay attention to the five-star system, three stars is meant to be &amp;#34;neutral,&amp;#34; neither good nor bad.&lt;br /&gt;I paid to reload my gift card, I reloaded my gift card, end of story. I got the exact service I paid to get... nothing more. And unlike a &amp;#34;product&amp;#34; (including many a free ebook) this doesn&#x27;t require me to invest any time in using it... except the time I&#x27;m spending writing a review.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag neutral">NEUTRAL</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>21</td><td><details><summary>Quick Delivery</summary><div class="review-text">Delivered when promised, easy to purchase.&lt;br /&gt;Perfect gift for that person who has everything</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>22</td><td><details><summary>Five Stars</summary><div class="review-text">love the packaging</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>23</td><td><details><summary>Five Stars</summary><div class="review-text">Great gift idea</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>24</td><td><details><summary>Some issues</summary><div class="review-text">My sister did mot even recognize it was from me due to lack of labels and such</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>25</td><td><details><summary>What a complete waste of money</summary><div class="review-text">Why does Amazon show 4.5 stars for this gift card?  Its very hard to use at a golf course if you can find a course that will honor it.  And if you decide to use it on merchandise instead, the prices and shipping are both inflated.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEUTRAL" data-pred="NEUTRAL">
+<td>26</td><td><details><summary>Three Stars</summary><div class="review-text">Gift.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag neutral">NEUTRAL</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>27</td><td><details><summary>refill</summary><div class="review-text">great</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>28</td><td><details><summary>Discount on reload always not valid</summary><div class="review-text">I just hate and am discouraged by the fact that there are always great discounts on Gift Card Reload every month (e.g. for June 2016, 0616GCARDS buy USD50 get USD10 free) but it is always targeted very randomly or I believe only to those users rarely buying anything before, while being a regular buyer cannot enjoy the discount every time.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>29</td><td><details><summary>Five Stars</summary><div class="review-text">Wonderful birthday gift</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>30</td><td><details><summary>Great gift</summary><div class="review-text">Bought it as a gift for my husband. He loved it.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>31</td><td><details><summary>Five Stars</summary><div class="review-text">Love the tin.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>32</td><td><details><summary>Missing information about how much each gift card is worth</summary><div class="review-text">I purchased 5 gift cards of different values and when they arrived they were not labeled by amounts. I have to go back to the receipts, look up the skew numbers and identify how much each is worth. This is unnecessary nuisance.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>33</td><td><details><summary>Love this added card holder.</summary><div class="review-text">Always a perfect gift.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>34</td><td><details><summary>Don&#x27;t ever put a lot of money on it and buy something</summary><div class="review-text">It was a huge pain in the butt trying to load and then when I tried to pay for something you wouldn&#x27;t take it from the gift card you kept trying to charge my credit and debit cards and it ended up charging me fees up the wazoo and locking my account. So then I had to get my account unlocked all so I could go through it again so then I tried logging in from somewhere else and miraculously it worked fine. So all of that nonsense to buy my sons Christmas gift and now I&#x27;m out an extra $45. Otherwise it&#x27;s usually great.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>35</td><td><details><summary>One Star</summary><div class="review-text">I didn&#x27;t get my 2% or $10 bonus for refilling my balance.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>36</td><td><details><summary>Not great</summary><div class="review-text">Kinda cheap looking</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>37</td><td><details><summary>BEEN USED</summary><div class="review-text">DID&#x27;NT WORK SAIDMIY HAD BEEN USED</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>38</td><td><details><summary>Deal</summary><div class="review-text">A deal if you can catch it</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>39</td><td><details><summary>The WORST</summary><div class="review-text">Couldn&#x27;t activate online or over the phone. Had to talk to rep who read from script. Can&#x27;t pay at the pump. That won&#x27;t work for after-hours. Denied 3 times before it would work. Absolutely the worst gift card. Stick with vanilla or another that&#x27;s ready to use. This was insane.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>40</td><td><details><summary>Five Stars</summary><div class="review-text">great</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>41</td><td><details><summary>Fraudulent schemes!!</summary><div class="review-text">I ordered this card once before &amp; it worked fine. This time went to the gift card website as instructed &amp; registered the card to my name &amp; address within mins of doing so the $200.00 was gone. So yeah that&#x27;s what fraud is some one ripped me off &amp; Amazon won&#x27;t help</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>42</td><td><details><summary>Good idea  for  quick gift</summary><div class="review-text">Very  easy</div></details></td>
+<td>4</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>43</td><td><details><summary>Not a great gift</summary><div class="review-text">Did not receive credits for purchase</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>44</td><td><details><summary>Make it easier to use.</summary><div class="review-text">It was to hard to redeem without a card. Using email should not be so hard to redeem gift card than using a card.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>45</td><td><details><summary>First time user friendly</summary><div class="review-text">It sucks only can use it once.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="POSITIVE" data-pred="NEUTRAL">
+<td>46</td><td><details><summary>incentive discount</summary><div class="review-text">incentive discount</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag neutral">NEUTRAL</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>47</td><td><details><summary>Did not complete the payment as requested and advertized.</summary><div class="review-text">I ordered a reload of $100 for the gift card. It stated that there would be a bonus $10 added to my account. The added $10 never was credited. I will not be doing this again.</div></details></td>
+<td>2</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>48</td><td><details><summary>So easy</summary><div class="review-text">Great to give and instant</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>49</td><td><details><summary>Money stolen from Visa gift card in less than 12 hrs.</summary><div class="review-text">Thieves! I paid $206.00 for a prepaid $200. Debit card. I activated Friday night and all the money was stolen out of it by Saturday morning. I live in NY state and the money was  taken out in Washington state, right where it was purchased from. I&#x27;m not blaming Amazon, I&#x27;m blaming  Visa! I will never purchase a prepaid card again from them! Buyer beware!</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>50</td><td><details><summary>Gift with Meaning</summary><div class="review-text">Cute tin design for the gift card. Makes the gift that much special.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="POSITIVE" data-pred="NEUTRAL">
+<td>51</td><td><details><summary>Five Stars</summary><div class="review-text">Well you know!</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag neutral">NEUTRAL</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>52</td><td><details><summary>jipped</summary><div class="review-text">i redeemed for a bracelt that was not what it looked like in the picture..I was supposed to get 20.00 back on my giftcard &amp; I was only credited with 10.00.....?????</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>53</td><td><details><summary>Choose a different box if you want it to look like a Christmas gift</summary><div class="review-text">Even though the gift card itself has a &amp;#34;holiday&amp;#34; snow globe on it, the box looks like it is leftover from Halloween. I wish I had paid closer attention, it does not look like a Christmas gift at all.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="POSITIVE">
+<td>54</td><td><details><summary>Nice gift card</summary><div class="review-text">Seems to be a good gift card no issues</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="POSITIVE">
+<td>55</td><td><details><summary>Three Stars</summary><div class="review-text">used it well</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>56</td><td><details><summary>Excellent Gift</summary><div class="review-text">Great</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>57</td><td><details><summary>nice packaging</summary><div class="review-text">Makes a very nice last minute, easy Christmas gift for year 2020!</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>58</td><td><details><summary>A cute box and an ornament!</summary><div class="review-text">What an ingenious way to gift a card to someone! There&#x27;s no extra fees or surcharges involved...just whatever you spend on the card itself. Yet, so cute and different way to &quot;wrap&quot;! I loved these little boxes to house the gift cards to my grandkids.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>59</td><td><details><summary>The card is great of course but this tin has a big hole ...</summary><div class="review-text">The card is great of course but this tin has a big hole in the back to allow a bar code scan. Fine but the tin is useless other than  to give you something to wrap.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>60</td><td><details><summary>Was Easy and Useful</summary><div class="review-text">Allowed me to easily reload my balance.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEUTRAL" data-pred="NEUTRAL">
+<td>61</td><td><details><summary>easy to order and ship</summary><div class="review-text">easy to order and ship, however was not given the option to include a note. Kind of weird  to send a gift card without the ability to include a note.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag neutral">NEUTRAL</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>62</td><td><details><summary>Fraud!</summary><div class="review-text">I purchased this card for Christmas and can’t use it! The card has been voided!</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>63</td><td><details><summary>Four Stars</summary><div class="review-text">Very cute tin, arrived quickly, but the gift tin was bent slightly.</div></details></td>
+<td>4</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>64</td><td><details><summary>gift card</summary><div class="review-text">I did not order this item.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>65</td><td><details><summary>Gift card came in an envelope that was squished...</summary><div class="review-text">When I received the card and envelope they were squished and the gift card was bent.. pretty disappointing. This was suppose to be a gift and I can&#x27;t give it to them looking like this.</div></details></td>
+<td>2</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>66</td><td><details><summary>Great idea</summary><div class="review-text">Easy to utilize the reload option.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>67</td><td><details><summary>Card is not usable</summary><div class="review-text">Bought as a present, card has never worked, contacted arby&#x27;s and they have been absolutely hideous to rectify the situation.  Meanwhile an extra $50 has been spent trying to use the card for orders at the drive-up window and inside service.  The card shows a credit of $50 when contacting their customer service department but doesn&#x27;t scan in their machines at any nearby locations. I am unsure as how to rectify the situation through amazon....</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>68</td><td><details><summary>Great anniversary gift!</summary><div class="review-text">I gave it as an anniversary gift to my daughter and son-in-law. My daughter thanked me for it and told me they would use it at one of the restaurants. I like how convenient it was and how it gave my kids the opportunity to choose from so many restaurants.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>69</td><td><details><summary>They do not work at many places</summary><div class="review-text">They just don&#x27;t go through all the time. At restaurants, stores, and gas stations, they may not work.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>70</td><td><details><summary>False promise</summary><div class="review-text">The promotion had stated you get some cash back on reload but never saw anything....</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>71</td><td><details><summary>Better of buying at a Starbucks location.</summary><div class="review-text">What a mess to get apart!  You&#x27;re better off buying at a Starbucks location.  The four cards are glued together and even though it&#x27;s supposed to be the kind of glue that rolls off easily IT DOES NOT.  It leaves two nasty, sticky, streaks on each card.</div></details></td>
+<td>2</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>72</td><td><details><summary>Favorite gift card!!!!</summary><div class="review-text">This is my go-to gift card. The box is great for any occasion!!! We use them for teacher gifts, birthdays, baby showers, etc.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEUTRAL" data-pred="NEUTRAL">
+<td>73</td><td><details><summary>Three Stars</summary><div class="review-text">Did not purchase</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag neutral">NEUTRAL</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>74</td><td><details><summary>Boo! Hiss!</summary><div class="review-text">I would never pay $10 for this!</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>75</td><td><details><summary>Gift</summary><div class="review-text">The gift box was crushed</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>76</td><td><details><summary>Easy to load.</summary><div class="review-text">Easy way to split your payment up. Really easy to load, they don&#x27;t have an outrageous minimum load requirement. Works well.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>77</td><td><details><summary>Many thanks.</summary><div class="review-text">My daughter is thrilled for receiving this gift card. Thank you for your prompt delivery.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>78</td><td><details><summary>gift card</summary><div class="review-text">the one thing that I couldn&#x27;t understand was why did it take so long just for a gift card to be delivery????</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>79</td><td><details><summary>The box looks fancy but the card gets stuck inside</summary><div class="review-text">I love how the box looks but the gift card was stuck inside. I had to open the entire box to get it out from inside. Thank God I checked at first. The gift recipient would&#x27;ve thought that I gave her an empty box lol</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>80</td><td><details><summary>Very hard to activate</summary><div class="review-text">Sent this to my son as a gift and it has taking all day to try and get it activated and still yet to get the information needed his birthday is about over</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>81</td><td><details><summary>It worked!</summary><div class="review-text">It&#x27;s always a concern buying gift cards, will it go through or not? Will it be loaded? This one worked perfectly. Great&amp; easy gift.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>82</td><td><details><summary>Love this restaurant!</summary><div class="review-text">Gift card worked!</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="POSITIVE">
+<td>83</td><td><details><summary>Fine</summary><div class="review-text">Fine</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>84</td><td><details><summary>I only received9 cards and i couldl&#x27;t find a way to contact Amazon to let them know.</summary><div class="review-text">buy gift cards in person</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>85</td><td><details><summary>Funny. What a joke</summary><div class="review-text">It sucked  I paid 500$ for something useless I want my money back</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>86</td><td><details><summary>It make it easier to use on line</summary><div class="review-text">Tell me fail try again &amp; again</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>87</td><td><details><summary>could not use a gift card</summary><div class="review-text">i could not activate my gift cards---please send me 2 more cards that will work.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>88</td><td><details><summary>Easy to gift</summary><div class="review-text">Good👍👍</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>89</td><td><details><summary>Bought through the Baby Registry</summary><div class="review-text">I purchased this gift card through the baby registry.  It was to be delivered to the parents-to-be who live a few hours away.  Now I have to mail this to them.  That was the whole reason I used the baby registry.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>90</td><td><details><summary>Bar-B-Cutie gift card pkg problem</summary><div class="review-text">The packaging around the gift card was torn and wrinkled.  I taped it back together the best I could and sent it as a gift to a Nashville, TN new home owner.  I apologized to my friend for the appearance of the gift card, but hoped that the Bar-B-Cutie experience was a good one.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>91</td><td><details><summary>Great Card</summary><div class="review-text">How Can You Go Wrong With An Amazon Gift Card</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>92</td><td><details><summary>GIFT CARD DID NOT WORK</summary><div class="review-text">This gift card was not redeemable. We tried entering the numbers and scanning the card. I do not know how to contact Amazon to get a refund.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEGATIVE" data-pred="NEUTRAL">
+<td>93</td><td><details><summary>😕</summary><div class="review-text">Never purchased it</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag neutral">NEUTRAL</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>94</td><td><details><summary>My gift card was not in the envelope for my nephew&#x27;s 16th! He received only an envelope</summary><div class="review-text">I am not sure since my new phew only received and envelope for his birthday gift and no gift card - so upset.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="POSITIVE">
+<td>95</td><td><details><summary>Practicidad y Detalle</summary><div class="review-text">Llego muy rapido y luce muy agradable</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>96</td><td><details><summary>No money on cards</summary><div class="review-text">Amazon refunded gift cards without my consent!</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>97</td><td><details><summary>Great gift for anyone</summary><div class="review-text">Great way to gift</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="POSITIVE" data-pred="NEUTRAL">
+<td>98</td><td><details><summary>Simple</summary><div class="review-text">It was a gift card...</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag neutral">NEUTRAL</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>99</td><td><details><summary>Hard to sort when you&#x27;ve ordered multiple designs and amounts</summary><div class="review-text">These gift cards were purchased for Christmas gifts.  However when they got here  the amount of each had to be compared to numbers on the invoice.  and the containers they were in were not as ordered.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>100</td><td><details><summary>as described, arrived on time</summary><div class="review-text">as described, arrived on time</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>101</td><td><details><summary>Frustrating</summary><div class="review-text">Was not redeemable</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>102</td><td><details><summary>Five Stars</summary><div class="review-text">very good</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>103</td><td><details><summary>Ruby Tuesdays closing</summary><div class="review-text">Ruby Tuesdays is closing stores across the country. May not be the best purchase for your money.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>104</td><td><details><summary>Leave yourself time to match gifts to recipients!</summary><div class="review-text">Gift card tin arrived with Santa bag on time. However, the recipient information was tossed in the package without any reference to the actual gifts. Luckily I knew which tag went with which gift, and the gift values weee the same. However, this was a problem for gifts sent directly to recipients. The only gifts which were properly marked were the gift-wrapped items, but even those arrived with extra recipient tags adding to confusion. We should not have to build-a-gift at these prices. Amazon, you can do much better than this!</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>105</td><td><details><summary>I don&#x27;t like how its set up but what can I do</summary><div class="review-text">We should have the choice to want to use our gift card. There should be some way to choose how you want to pay for your purchase. If there is a way how do I do it? I don&#x27;t like how its set up but what can I do.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>106</td><td><details><summary>If you do not receive it call immediately!</summary><div class="review-text">They lost track of both of them, missed our event they were being used for.  1 1/2 week late.  Amazon customer service once we found how to call them were all over it.</div></details></td>
+<td>2</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>107</td><td><details><summary>One Star</summary><div class="review-text">Cancelled an order paid with my gift card but balance did not reload. Beware.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>108</td><td><details><summary>No Gift</summary><div class="review-text">This was supposed to be a gift card. I received notice from Amazon as well as a gift slip in the mail. When I clicked the flower pot, I was told to add $15 to my cart as though it was a purchase. I called Amaon and were unable to help me redeem the gift.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>109</td><td><details><summary>Can’t use entire amount</summary><div class="review-text">I won’t purchase this type of gift card on Amazon again. You must use the entire EXACT amount or under the purchased amount in one purchase. If you only spend 35$ of a 50$ gift card then the other 15$ is no longer available. My daughter has 15$ left and it is not usable.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>110</td><td><details><summary>The gift card was great - the card - not so much</summary><div class="review-text">Sent an Amazon giftcard to my son-in-law - filled out the amazon bday card - went back and double checked - all good.  Giftcard arrives with no wording in the card.  Took 2 days to figure out (small writing on the packing info) where it came from.  Have NEVER had an issue with Amazon - was a little bummed the bday card was blank.  Even went back on my account and saw the &quot;note&quot; section for the card filled out.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>111</td><td><details><summary>It did not look like the card and package on the web site.</summary><div class="review-text">The card was bent and it did not come in a Silver Reveal as promised.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>112</td><td><details><summary>SCAM!!!!!!!!!!</summary><div class="review-text">DO NOT BUY THEY DEACTIVATE IT BEFORE YOU GET IT.&lt;br /&gt;Everyone is having problems I should of read reviews before buying but I didn’t think I had to. Thank you to the customer serious representative Sebastin for getting me my refund quick and easy.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>113</td><td><details><summary>Recipient didn’t know what it was!</summary><div class="review-text">It wasn’ta real gift card</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="POSITIVE">
+<td>114</td><td><details><summary>Its a gift card</summary><div class="review-text">... it’s a gift card ? Performed as advertised</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>115</td><td><details><summary>Always works</summary><div class="review-text">This was a gift and it was well received.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>116</td><td><details><summary>Easy to uograde</summary><div class="review-text">Great design</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>117</td><td><details><summary>... and I&#x27;m sure my teen-aged grandkids will be very pleased. At there ages now</summary><div class="review-text">The pop-up is really cute and I&#x27;m sure my teen-aged grandkids will be very pleased. At there ages now, I hardly know what they would like for Christmas. Thanks!</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>118</td><td><details><summary>Card arrives opened, what a miserable SCAM!!!</summary><div class="review-text">I received this card today and found the packaging was already opened. The pull tab that hides the bar code on the card was already removed, the same pull tab that says &quot;Do not sell if package has been tampered with or opened&quot;. I called Nordstrom in attempts to validate the value on the card, if there is any, and they wanted a 16 digit number from the back of the card. This Nordstrom birthday &quot;Cake&quot; card has a copyright of 2018 and has a 30 digit number on the back, which Nordstrom is not able to validate.&lt;br /&gt;This leaves me with a tampered with card that is likely completely WORTHLESS!&lt;br /&gt;&lt;br /&gt;The synopsis is, the card arrived opened and tampered with, 3 years old, and Nordstrom could not validate if there is any value on the card. This is a miserable SCAM!!!</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEUTRAL" data-pred="NEUTRAL">
+<td>119</td><td><details><summary>I choosed this GC because i couldnt pay with two ...</summary><div class="review-text">I choosed this GC because i couldnt pay with two CC. It took a couple of verification days and a phone call to be active, maybe because I dont live in the US.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag neutral">NEUTRAL</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>120</td><td><details><summary>No lo he podido enviar al destinatario y es para regalar</summary><div class="review-text">No lo pude enviar a la persona para la que lo adquirí</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>121</td><td><details><summary>Offer not received</summary><div class="review-text">I increased my acct reload from my usual $25.00 to $50.00 because of the offer I responded to. The offer said I would receive an extra $8.00 in my acct if I added $40.00 or more to my acct. I did so, but did not get the extra. I was disappointed.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>122</td><td><details><summary>Easy to reload amazon care</summary><div class="review-text">Very easy to load an amazon card</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>123</td><td><details><summary>Security</summary><div class="review-text">Getting money to this card is what has and will be show stopped for me. Not enough security for your site, I refuse to use your service until it&#x27;s made easier for to use.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>124</td><td><details><summary>waST OF MY MONEY AN TIME</summary><div class="review-text">you all wouldnt let put it on my own credit card an had to put money from credit to the reload crap o an something elese i better get it back to my credit card because i returned the order because it was nothin but crap i wouldnt give that trash to eneyone that i know .</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>125</td><td><details><summary>Paid $25 for a blank gift card</summary><div class="review-text">Went to the restaurant to use this gift card and there was no value added to it. Do not purchase. It’s a scam.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>126</td><td><details><summary>One Star</summary><div class="review-text">could not book hotel stay with</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>127</td><td><details><summary>I was so happy when I saw this one with the description that ...</summary><div class="review-text">The description indicated that the Punchcase would fit a Kindle.  Unfortunately it does not.  I have an original Kindle and it is difficult now to find cases that fit.  I was so happy when I saw this one with the description that it would fit a Kindle, but it did not.&lt;br /&gt;I will say that your return policy is excellent and I thank you for that.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="POSITIVE">
+<td>128</td><td><details><summary>Easy to reload</summary><div class="review-text">Ease of loading card</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>129</td><td><details><summary>Five Stars</summary><div class="review-text">beautiful</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>130</td><td><details><summary>Five Stars</summary><div class="review-text">Great gift for my son, he really liked the tin as well. Quick delivery by Amazon.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>131</td><td><details><summary>Uhh yea no thanks!</summary><div class="review-text">I’m not even going to do this whole process. It’s way worse.&lt;br /&gt;Who are these mentally I’ll people that like this better now…?&lt;br /&gt;It’s not worth the time  I used to be able to load from multiple places in a matter of minutes. Now it’d take much longer to add from a single source  …. Pretty stupid change Amazon. BOOOOOOOOO!!!👎👎👎👎👎</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>132</td><td><details><summary>Question about my gift card!!</summary><div class="review-text">The original amount of my gift card has not been accesses.  Why??  I would like to know the total balance left on the gift card, including the amount that was added.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>133</td><td><details><summary>Five Stars</summary><div class="review-text">Quick and easy reload. No hassles. It was available almost instantly.</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>134</td><td><details><summary>Lmao sucks</summary><div class="review-text">Literally came bent in half thanks Amazon for an ungiftable gift🤩</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="POSITIVE">
+<td>135</td><td><details><summary>I think it is a good gift card</summary><div class="review-text">I think it is  a good gift card.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>136</td><td><details><summary>Gift cards</summary><div class="review-text">I had ordered $400 worth of gift cards and wanted to use the Believe card face and card because they were for my church employees.&lt;br /&gt;I was unable to do that and received the kindle fire card face which was confusing to me how the gift card could be used and the free card was not appropriate for the church occasion.  I had called your customer service person and he could not understand that I was wanting to get an appropriate fee card but couldn’t make him understand what the problem was.  I gave up and bought 5 appropriate cards at my own expense.&lt;br /&gt;I will try another method next year!  Nancy Lain</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>137</td><td><details><summary>Three Stars</summary><div class="review-text">Card was great, unfortunately it got here 2 days after Christmas!</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>138</td><td><details><summary>Arrived on day promised</summary><div class="review-text">You have the option of them printing a message of your choosing in the card.  I did choose to write a few short words and the card arrived without the inscription inside.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="NEUTRAL" data-pred="NEUTRAL">
+<td>139</td><td><details><summary>Perfect for Halloween!</summary><div class="review-text">Perfect color combo for Halloween. I was expecting a gold bow - as per picture -  but it is orange.&lt;br /&gt;A gift card is a gift card but I will be shopping for new ribbon.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag neutral">NEUTRAL</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>140</td><td><details><summary>it didnt work</summary><div class="review-text">it didnt work .the promotion that amazone was offering when you buy gift card get $20 it didnt work</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="POSITIVE">
+<td>141</td><td><details><summary>Three Stars</summary><div class="review-text">I was very happy on how fast i got my reload.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>142</td><td><details><summary>Five Stars</summary><div class="review-text">Was very pleased!</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>143</td><td><details><summary>Purchase was good but my Credit card details compromised</summary><div class="review-text">Product is good but I used my credit card for this purchase and next day onwards my credit card was unauthorizedly getting swiped at DELIVEROO in GBP(pounds) first 38£ n then 24£..had to block my credit card and reported fraudulenttransactions on my credit card..until this purchase my card was very secure..I need help in highlighting this issue to Amazon Information Security team..any leads pls help</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>144</td><td><details><summary>Wouldn’t buy</summary><div class="review-text">Not as strong as i would like it to be.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>145</td><td><details><summary>Did not receive promo -</summary><div class="review-text">Received gift card but not the $10 credit.  AMazon makes it difficult to reach them and get assistance.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="incorrect" data-actual="NEUTRAL" data-pred="NEGATIVE">
+<td>146</td><td><details><summary>I was very disappointed by the wrap and tag</summary><div class="review-text">The item arrived quickly.  I was very disappointed by the wrap and tag.....tag was mostly unreadable.  I will have to change it. I paid extra for the wrap.</div></details></td>
+<td>3</td><td><span class="tag neutral">NEUTRAL</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="bad">Incorrect</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>147</td><td><details><summary>BEWARE - Card Not Activated</summary><div class="review-text">When I went to use this card, the restaurant wasn&#x27;t able to process it. I called the number on the back and was informed this card had never been activated and has no value.</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="correct" data-actual="NEGATIVE" data-pred="NEGATIVE">
+<td>148</td><td><details><summary>NEVER ON TIME!</summary><div class="review-text">It’s useless to purchase a gift card from Amazon they’re never on time even though it says it will be…I will be mailing gifts to my grand baby’s from now on so they won’t be late! Screw these damn cards!</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag negative">NEGATIVE</span></td><td><span class="good">Correct</span></td></tr><tr data-status="no-response" data-actual="NEGATIVE" data-pred="NO_RESPONSE">
+<td>149</td><td><details><summary>Scam</summary><div class="review-text">Do not buy this gift card got it set a pin and a day after I set the pin it got declined when I called I was told that my card had been used on a gaming website. In order to dispute it I have to fill out a form and send proof of purchase then maybe in 30 to 90 days I might get a new card this is total bs</div></details></td>
+<td>1</td><td><span class="tag negative">NEGATIVE</span></td>
+<td><span class="tag no_response">NO_RESPONSE</span></td><td><span class="warn">No response</span></td></tr><tr data-status="correct" data-actual="POSITIVE" data-pred="POSITIVE">
+<td>150</td><td><details><summary>Like the convenience of no wrapping</summary><div class="review-text">All were for gifts.  Like the convenience of no wrapping, being able to put them in the Christmas stockings...plus the good looks</div></details></td>
+<td>5</td><td><span class="tag positive">POSITIVE</span></td>
+<td><span class="tag positive">POSITIVE</span></td><td><span class="good">Correct</span></td></tr></tbody></table></div></div>
+<p style="font-size:12px;color:var(--muted)">Generated entirely from saved local outputs; no model calls are made by this dashboard generator.</p></main><footer class="shell">MBAX 6418 · Assignment 1</footer><script>const buttons=[...document.querySelectorAll('[data-filter]')],rows=[...document.querySelectorAll('table.reviews tbody tr')],count=document.getElementById('count');function applyFilter(kind){let visible=0;rows.forEach(row=>{const status=row.dataset.status,actual=row.dataset.actual,pred=row.dataset.pred;let show=true;if(kind==='correct')show=status==='correct';else if(kind==='incorrect')show=status==='incorrect';else if(kind==='neutral-errors')show=actual==='NEUTRAL'&&pred!=='NEUTRAL';else if(kind==='no-response')show=status==='no-response';row.hidden=!show;if(show)visible++});count.textContent=`${visible} of ${rows.length} visible`;buttons.forEach(b=>b.classList.toggle('active',b.dataset.filter===kind))}buttons.forEach(b=>b.addEventListener('click',()=>applyFilter(b.dataset.filter)));</script></body></html>

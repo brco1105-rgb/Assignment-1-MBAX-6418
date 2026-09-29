@@ -1,0 +1,21 @@
+{
+  "resource": "NRC Word-Emotion Association Lexicon (EmoLex)",
+  "version": "0.92",
+  "language": "English",
+  "creators": [
+    "Saif M. Mohammad",
+    "Peter D. Turney"
+  ],
+  "official_reference_url": "https://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm",
+  "official_download_attempt": "https://saifmohammad.com/WebDocs/Lexicons/NRC-Emotion-Lexicon.zip",
+  "official_download_status": "HTTP 406; official file could not be compared byte-for-byte",
+  "downloaded_from": "https://raw.githubusercontent.com/dinbav/LeXmo/master/NRC-Emotion-Lexicon-Wordlevel-v0.92.txt",
+  "mirror_documentation": "https://github.com/dinbav/LeXmo",
+  "retrieved_utc": "2026-09-29T00:38:19.295430+00:00",
+  "sha256": "df3638e9fdbd2ebcf69bad833e16aee76c4c4360dfb17324178d1fa1e812ceec",
+  "term_count": 14182,
+  "association_rows": 141820,
+  "citation": "Mohammad, S. M., & Turney, P. D. (2013). Crowdsourcing a Word-Emotion Association Lexicon. Computational Intelligence, 29(3), 436–465. https://doi.org/10.1111/j.1467-8640.2012.00460.x",
+  "bibliographic_verification": "Crossref DOI record: print publication August 2013; online publication September 4, 2012.",
+  "terms_note": "Official search-indexed resource describes non-commercial research/educational use. Public availability is not an unrestricted license. Consult official terms before redistribution or commercial use. Local lexicon is not included in deliverable attachments."
+}

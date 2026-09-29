@@ -1,0 +1,300 @@
+review_number,title,text,new_sentiment,primary_emotion,raw_model_output,format_valid,validation_error,prediction_received_utc,correct_sentiment,is_correct
+1,Love it,Love the ease of adding to my kindle,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:11:03.186227+00:00,POSITIVE,True
+2,Easy quick loading,SO easy to load these from the comfort of your home. Fast and fool proof. Thank you Amazon.,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:11:05.058547+00:00,POSITIVE,True
+3,5 stars,It's as described.  I would purchase this again.<br /><br />I'm only writing this because Amazon won't let me just rate purchases by stars anymore... which makes me not want to rate purchases as often as I did in the past.,POSITIVE,ANGER,"SENTIMENT: POSITIVE
+EMOTION: ANGER",True,,2026-09-29T01:11:08.659603+00:00,POSITIVE,True
+4,Too beat up to give as a gift,"Gift card seems fine but the green card it was partially mounted to was in bad condition (bent, faded, etc).  Makes you wonder if the card will work or if the number has been stolen.  Even though it comes with a receipt, I'm still nervous to give it as a gift.",NEGATIVE,FEAR,"SENTIMENT: NEGATIVE
+EMOTION: FEAR",True,,2026-09-29T01:11:10.775538+00:00,NEGATIVE,True
+5,Great Buy,My friend loved this gift card and the store!,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:11:13.225329+00:00,POSITIVE,True
+6,Who sent it?,Nice way t send a Christmas gift. Only difficulty is no notice is included so the recipient does not know whom it came from.,NEUTRAL,ANGER,"SENTIMENT: NEUTRAL
+EMOTION: ANGER",True,,2026-09-29T01:11:17.736894+00:00,NEUTRAL,True
+7,Fun to receive,Birthday gift cute packaging.,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:11:19.669806+00:00,POSITIVE,True
+8,Worst item ever,No one would let you use tbem I got stuck with 700 gift cards was able to pay directv with the,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:11:21.593991+00:00,NEGATIVE,True
+9,Good,Good,POSITIVE,TRUST,"SENTIMENT: POSITIVE
+EMOTION: TRUST",True,,2026-09-29T01:11:24.071509+00:00,NEUTRAL,False
+10,Hmm,wasnt reloaded with the correct amouny,NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:11:29.906477+00:00,NEGATIVE,True
+11,Doesn't always work,It has a balance but can;t use in certain places,NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:11:36.054823+00:00,NEUTRAL,False
+12,Very nice tin,Very pretty presentation,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:11:40.310844+00:00,POSITIVE,True
+13,This is cool! You pay for a amazon gift card then you get a free envelope and card to go with it!,This is cool! You pay for a amazon gift card then you get a free envelope and card to go with it! Gift giving made easy. This is good when you want to buy gifts in advance to throw into your amazon cart or simply have on hand when you need to celebrate someones special day. The gift card is a physical card too.,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:11:42.643428+00:00,POSITIVE,True
+14,Box was dented & I did not get my $10 Amazon credit,I ordered this gift card as a Christmas present and the box was dented & I did not get my $10 Amazon credit,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:11:44.494526+00:00,NEUTRAL,False
+15,Lable the value.,We bought 3 cards of different values and we could figure out which one was what. Needs to be labeled values,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:11:47.830054+00:00,NEUTRAL,False
+16,she loved it.,Given as a gift to a hard core QVC shopper...she loved it.,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:11:52.319529+00:00,POSITIVE,True
+17,Decent novelty restaurant,"Been here a few times, the location in Orlando. The food is alright, but over priced for what it is. Seems to not matter if they are busy or dead, always takes forever for ever step of the process. The Ice cream is very good though.",NEUTRAL,ANGER,"SENTIMENT: NEUTRAL
+EMOTION: ANGER",True,,2026-09-29T01:11:55.946407+00:00,NEUTRAL,True
+18,Just a gift,Was a gift,NEUTRAL,TRUST,"SENTIMENT: NEUTRAL
+EMOTION: TRUST",True,,2026-09-29T01:11:59.059017+00:00,NEUTRAL,True
+19,Not for California.,No Ruby Tuesday's in California.,NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:12:01.502307+00:00,NEGATIVE,True
+20,Why is Amazon prompting me to review this?,"Why is this even listed among the things Amazon wants me to review?<br />I reloaded my Amazon gift card balance, that's it.<br /><br />Why only three stars? Well, because if you pay attention to the five-star system, three stars is meant to be &#34;neutral,&#34; neither good nor bad.<br />I paid to reload my gift card, I reloaded my gift card, end of story. I got the exact service I paid to get... nothing more. And unlike a &#34;product&#34; (including many a free ebook) this doesn't require me to invest any time in using it... except the time I'm spending writing a review.",NEUTRAL,ANGER,"SENTIMENT: NEUTRAL
+EMOTION: ANGER",True,,2026-09-29T01:12:03.595069+00:00,NEUTRAL,True
+21,Quick Delivery,"Delivered when promised, easy to purchase.<br />Perfect gift for that person who has everything",POSITIVE,TRUST,"SENTIMENT: POSITIVE
+EMOTION: TRUST",True,,2026-09-29T01:12:05.956275+00:00,POSITIVE,True
+22,Five Stars,love the packaging,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:12:08.412626+00:00,POSITIVE,True
+23,Five Stars,Great gift idea,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:12:11.342075+00:00,POSITIVE,True
+24,Some issues,My sister did mot even recognize it was from me due to lack of labels and such,NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:12:13.503130+00:00,NEUTRAL,False
+25,What a complete waste of money,"Why does Amazon show 4.5 stars for this gift card?  Its very hard to use at a golf course if you can find a course that will honor it.  And if you decide to use it on merchandise instead, the prices and shipping are both inflated.",NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:12:15.776664+00:00,NEGATIVE,True
+26,Three Stars,Gift.,NEUTRAL,JOY,"SENTIMENT: NEUTRAL
+EMOTION: JOY",True,,2026-09-29T01:12:18.108212+00:00,NEUTRAL,True
+27,refill,great,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:12:20.121055+00:00,POSITIVE,True
+28,Discount on reload always not valid,"I just hate and am discouraged by the fact that there are always great discounts on Gift Card Reload every month (e.g. for June 2016, 0616GCARDS buy USD50 get USD10 free) but it is always targeted very randomly or I believe only to those users rarely buying anything before, while being a regular buyer cannot enjoy the discount every time.",NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:12:22.318946+00:00,NEGATIVE,True
+29,Five Stars,Wonderful birthday gift,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:12:24.348400+00:00,POSITIVE,True
+30,Great gift,Bought it as a gift for my husband. He loved it.,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:12:26.551435+00:00,POSITIVE,True
+31,Five Stars,Love the tin.,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:12:28.167135+00:00,POSITIVE,True
+32,Missing information about how much each gift card is worth,"I purchased 5 gift cards of different values and when they arrived they were not labeled by amounts. I have to go back to the receipts, look up the skew numbers and identify how much each is worth. This is unnecessary nuisance.",NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:12:30.346794+00:00,NEUTRAL,False
+33,Love this added card holder.,Always a perfect gift.,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:12:31.894662+00:00,POSITIVE,True
+34,Don't ever put a lot of money on it and buy something,It was a huge pain in the butt trying to load and then when I tried to pay for something you wouldn't take it from the gift card you kept trying to charge my credit and debit cards and it ended up charging me fees up the wazoo and locking my account. So then I had to get my account unlocked all so I could go through it again so then I tried logging in from somewhere else and miraculously it worked fine. So all of that nonsense to buy my sons Christmas gift and now I'm out an extra $45. Otherwise it's usually great.,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:12:33.848425+00:00,NEUTRAL,False
+35,One Star,I didn't get my 2% or $10 bonus for refilling my balance.,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:12:36.548058+00:00,NEGATIVE,True
+36,Not great,Kinda cheap looking,NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:12:38.946811+00:00,NEUTRAL,False
+37,BEEN USED,DID'NT WORK SAIDMIY HAD BEEN USED,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:12:42.401371+00:00,NEUTRAL,False
+38,Deal,A deal if you can catch it,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:12:44.403324+00:00,POSITIVE,True
+39,The WORST,Couldn't activate online or over the phone. Had to talk to rep who read from script. Can't pay at the pump. That won't work for after-hours. Denied 3 times before it would work. Absolutely the worst gift card. Stick with vanilla or another that's ready to use. This was insane.,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:12:47.503793+00:00,NEGATIVE,True
+40,Five Stars,great,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:12:49.921031+00:00,POSITIVE,True
+41,Fraudulent schemes!!,I ordered this card once before & it worked fine. This time went to the gift card website as instructed & registered the card to my name & address within mins of doing so the $200.00 was gone. So yeah that's what fraud is some one ripped me off & Amazon won't help,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:12:51.771342+00:00,NEGATIVE,True
+42,Good idea  for  quick gift,Very  easy,POSITIVE,TRUST,"SENTIMENT: POSITIVE
+EMOTION: TRUST",True,,2026-09-29T01:12:54.155778+00:00,POSITIVE,True
+43,Not a great gift,Did not receive credits for purchase,NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:12:57.777812+00:00,NEGATIVE,True
+44,Make it easier to use.,It was to hard to redeem without a card. Using email should not be so hard to redeem gift card than using a card.,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:13:00.100447+00:00,NEUTRAL,False
+45,First time user friendly,It sucks only can use it once.,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:13:02.031954+00:00,NEGATIVE,True
+46,incentive discount,incentive discount,NEUTRAL,ANTICIPATION,"SENTIMENT: NEUTRAL
+EMOTION: ANTICIPATION",True,,2026-09-29T01:13:06.446203+00:00,POSITIVE,False
+47,Did not complete the payment as requested and advertized.,I ordered a reload of $100 for the gift card. It stated that there would be a bonus $10 added to my account. The added $10 never was credited. I will not be doing this again.,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:13:09.608278+00:00,NEGATIVE,True
+48,So easy,Great to give and instant,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:13:12.703700+00:00,POSITIVE,True
+49,Money stolen from Visa gift card in less than 12 hrs.,"Thieves! I paid $206.00 for a prepaid $200. Debit card. I activated Friday night and all the money was stolen out of it by Saturday morning. I live in NY state and the money was  taken out in Washington state, right where it was purchased from. I'm not blaming Amazon, I'm blaming  Visa! I will never purchase a prepaid card again from them! Buyer beware!",NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:13:14.423825+00:00,NEGATIVE,True
+50,Gift with Meaning,Cute tin design for the gift card. Makes the gift that much special.,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:13:16.746043+00:00,POSITIVE,True
+51,Five Stars,Well you know!,NEUTRAL,TRUST,"SENTIMENT: NEUTRAL
+EMOTION: TRUST",True,,2026-09-29T01:13:22.479556+00:00,POSITIVE,False
+52,jipped,i redeemed for a bracelt that was not what it looked like in the picture..I was supposed to get 20.00 back on my giftcard & I was only credited with 10.00.....?????,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:13:24.873997+00:00,NEGATIVE,True
+53,Choose a different box if you want it to look like a Christmas gift,"Even though the gift card itself has a &#34;holiday&#34; snow globe on it, the box looks like it is leftover from Halloween. I wish I had paid closer attention, it does not look like a Christmas gift at all.",NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:13:27.576436+00:00,NEUTRAL,False
+54,Nice gift card,Seems to be a good gift card no issues,POSITIVE,TRUST,"SENTIMENT: POSITIVE
+EMOTION: TRUST",True,,2026-09-29T01:13:29.851507+00:00,NEUTRAL,False
+55,Three Stars,used it well,POSITIVE,TRUST,"SENTIMENT: POSITIVE
+EMOTION: TRUST",True,,2026-09-29T01:13:31.574069+00:00,NEUTRAL,False
+56,Excellent Gift,Great,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:13:34.043495+00:00,POSITIVE,True
+57,nice packaging,"Makes a very nice last minute, easy Christmas gift for year 2020!",POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:13:36.128103+00:00,POSITIVE,True
+58,A cute box and an ornament!,"What an ingenious way to gift a card to someone! There's no extra fees or surcharges involved...just whatever you spend on the card itself. Yet, so cute and different way to ""wrap""! I loved these little boxes to house the gift cards to my grandkids.",POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:13:39.242505+00:00,POSITIVE,True
+59,The card is great of course but this tin has a big hole ...,The card is great of course but this tin has a big hole in the back to allow a bar code scan. Fine but the tin is useless other than  to give you something to wrap.,NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:13:41.554834+00:00,NEUTRAL,False
+60,Was Easy and Useful,Allowed me to easily reload my balance.,POSITIVE,TRUST,"SENTIMENT: POSITIVE
+EMOTION: TRUST",True,,2026-09-29T01:13:43.951092+00:00,POSITIVE,True
+61,easy to order and ship,"easy to order and ship, however was not given the option to include a note. Kind of weird  to send a gift card without the ability to include a note.",NEUTRAL,ANGER,"SENTIMENT: NEUTRAL
+EMOTION: ANGER",True,,2026-09-29T01:13:48.177797+00:00,NEUTRAL,True
+62,Fraud!,I purchased this card for Christmas and can’t use it! The card has been voided!,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:13:50.254422+00:00,NEGATIVE,True
+63,Four Stars,"Very cute tin, arrived quickly, but the gift tin was bent slightly.",POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:13:53.592077+00:00,POSITIVE,True
+64,gift card,I did not order this item.,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:13:56.490508+00:00,NEGATIVE,True
+65,Gift card came in an envelope that was squished...,When I received the card and envelope they were squished and the gift card was bent.. pretty disappointing. This was suppose to be a gift and I can't give it to them looking like this.,NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:13:58.453854+00:00,NEGATIVE,True
+66,Great idea,Easy to utilize the reload option.,POSITIVE,TRUST,"SENTIMENT: POSITIVE
+EMOTION: TRUST",True,,2026-09-29T01:14:00.272243+00:00,POSITIVE,True
+67,Card is not usable,"Bought as a present, card has never worked, contacted arby's and they have been absolutely hideous to rectify the situation.  Meanwhile an extra $50 has been spent trying to use the card for orders at the drive-up window and inside service.  The card shows a credit of $50 when contacting their customer service department but doesn't scan in their machines at any nearby locations. I am unsure as how to rectify the situation through amazon....",NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:14:02.703429+00:00,NEGATIVE,True
+68,Great anniversary gift!,I gave it as an anniversary gift to my daughter and son-in-law. My daughter thanked me for it and told me they would use it at one of the restaurants. I like how convenient it was and how it gave my kids the opportunity to choose from so many restaurants.,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:14:04.656705+00:00,POSITIVE,True
+69,They do not work at many places,"They just don't go through all the time. At restaurants, stores, and gas stations, they may not work.",NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:14:06.768401+00:00,NEUTRAL,False
+70,False promise,The promotion had stated you get some cash back on reload but never saw anything....,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:14:09.197400+00:00,NEGATIVE,True
+71,Better of buying at a Starbucks location.,"What a mess to get apart!  You're better off buying at a Starbucks location.  The four cards are glued together and even though it's supposed to be the kind of glue that rolls off easily IT DOES NOT.  It leaves two nasty, sticky, streaks on each card.",NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:14:11.416358+00:00,NEGATIVE,True
+72,Favorite gift card!!!!,"This is my go-to gift card. The box is great for any occasion!!! We use them for teacher gifts, birthdays, baby showers, etc.",POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:14:13.734110+00:00,POSITIVE,True
+73,Three Stars,Did not purchase,NEUTRAL,TRUST,"SENTIMENT: NEUTRAL
+EMOTION: TRUST",True,,2026-09-29T01:14:18.575026+00:00,NEUTRAL,True
+74,Boo! Hiss!,I would never pay $10 for this!,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:14:20.558175+00:00,NEGATIVE,True
+75,Gift,The gift box was crushed,NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:14:22.838674+00:00,NEUTRAL,False
+76,Easy to load.,"Easy way to split your payment up. Really easy to load, they don't have an outrageous minimum load requirement. Works well.",POSITIVE,TRUST,"SENTIMENT: POSITIVE
+EMOTION: TRUST",True,,2026-09-29T01:14:25.679154+00:00,POSITIVE,True
+77,Many thanks.,My daughter is thrilled for receiving this gift card. Thank you for your prompt delivery.,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:14:27.705174+00:00,POSITIVE,True
+78,gift card,the one thing that I couldn't understand was why did it take so long just for a gift card to be delivery????,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:14:29.787982+00:00,NEUTRAL,False
+79,The box looks fancy but the card gets stuck inside,I love how the box looks but the gift card was stuck inside. I had to open the entire box to get it out from inside. Thank God I checked at first. The gift recipient would've thought that I gave her an empty box lol,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:14:32.246769+00:00,NEUTRAL,False
+80,Very hard to activate,Sent this to my son as a gift and it has taking all day to try and get it activated and still yet to get the information needed his birthday is about over,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:14:34.136306+00:00,NEUTRAL,False
+81,It worked!,"It's always a concern buying gift cards, will it go through or not? Will it be loaded? This one worked perfectly. Great& easy gift.",POSITIVE,TRUST,"SENTIMENT: POSITIVE
+EMOTION: TRUST",True,,2026-09-29T01:14:36.008246+00:00,POSITIVE,True
+82,Love this restaurant!,Gift card worked!,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:14:39.184392+00:00,POSITIVE,True
+83,Fine,Fine,POSITIVE,TRUST,"SENTIMENT: POSITIVE
+EMOTION: TRUST",True,,2026-09-29T01:14:42.189478+00:00,NEUTRAL,False
+84,I only received9 cards and i couldl't find a way to contact Amazon to let them know.,buy gift cards in person,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:14:44.548364+00:00,NEGATIVE,True
+85,Funny. What a joke,It sucked  I paid 500$ for something useless I want my money back,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:14:50.741305+00:00,NEGATIVE,True
+86,It make it easier to use on line,Tell me fail try again & again,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:14:53.904718+00:00,NEUTRAL,False
+87,could not use a gift card,i could not activate my gift cards---please send me 2 more cards that will work.,NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:14:56.083847+00:00,NEGATIVE,True
+88,Easy to gift,Good👍👍,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:14:58.625018+00:00,POSITIVE,True
+89,Bought through the Baby Registry,I purchased this gift card through the baby registry.  It was to be delivered to the parents-to-be who live a few hours away.  Now I have to mail this to them.  That was the whole reason I used the baby registry.,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:15:00.824388+00:00,NEGATIVE,True
+90,Bar-B-Cutie gift card pkg problem,"The packaging around the gift card was torn and wrinkled.  I taped it back together the best I could and sent it as a gift to a Nashville, TN new home owner.  I apologized to my friend for the appearance of the gift card, but hoped that the Bar-B-Cutie experience was a good one.",NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:15:02.736429+00:00,NEUTRAL,False
+91,Great Card,How Can You Go Wrong With An Amazon Gift Card,POSITIVE,TRUST,"SENTIMENT: POSITIVE
+EMOTION: TRUST",True,,2026-09-29T01:15:05.251932+00:00,POSITIVE,True
+92,GIFT CARD DID NOT WORK,This gift card was not redeemable. We tried entering the numbers and scanning the card. I do not know how to contact Amazon to get a refund.,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:15:08.156338+00:00,NEGATIVE,True
+93,😕,Never purchased it,NEUTRAL,SADNESS,"SENTIMENT: NEUTRAL
+EMOTION: SADNESS",True,,2026-09-29T01:15:11.290188+00:00,NEGATIVE,False
+94,My gift card was not in the envelope for my nephew's 16th! He received only an envelope,I am not sure since my new phew only received and envelope for his birthday gift and no gift card - so upset.,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:15:13.610233+00:00,NEGATIVE,True
+95,Practicidad y Detalle,Llego muy rapido y luce muy agradable,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:15:15.406950+00:00,NEUTRAL,False
+96,No money on cards,Amazon refunded gift cards without my consent!,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:15:17.706737+00:00,NEGATIVE,True
+97,Great gift for anyone,Great way to gift,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:15:20.504646+00:00,POSITIVE,True
+98,Simple,It was a gift card...,NEUTRAL,TRUST,"SENTIMENT: NEUTRAL
+EMOTION: TRUST",True,,2026-09-29T01:15:23.074134+00:00,POSITIVE,False
+99,Hard to sort when you've ordered multiple designs and amounts,These gift cards were purchased for Christmas gifts.  However when they got here  the amount of each had to be compared to numbers on the invoice.  and the containers they were in were not as ordered.,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:15:25.831655+00:00,NEUTRAL,False
+100,"as described, arrived on time","as described, arrived on time",POSITIVE,TRUST,"SENTIMENT: POSITIVE
+EMOTION: TRUST",True,,2026-09-29T01:15:27.605374+00:00,POSITIVE,True
+101,Frustrating,Was not redeemable,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:15:29.900826+00:00,NEGATIVE,True
+102,Five Stars,very good,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:15:32.230200+00:00,POSITIVE,True
+103,Ruby Tuesdays closing,Ruby Tuesdays is closing stores across the country. May not be the best purchase for your money.,NEGATIVE,FEAR,"SENTIMENT: NEGATIVE
+EMOTION: FEAR",True,,2026-09-29T01:15:35.252942+00:00,NEGATIVE,True
+104,Leave yourself time to match gifts to recipients!,"Gift card tin arrived with Santa bag on time. However, the recipient information was tossed in the package without any reference to the actual gifts. Luckily I knew which tag went with which gift, and the gift values weee the same. However, this was a problem for gifts sent directly to recipients. The only gifts which were properly marked were the gift-wrapped items, but even those arrived with extra recipient tags adding to confusion. We should not have to build-a-gift at these prices. Amazon, you can do much better than this!",NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:15:38.766185+00:00,NEUTRAL,False
+105,I don't like how its set up but what can I do,We should have the choice to want to use our gift card. There should be some way to choose how you want to pay for your purchase. If there is a way how do I do it? I don't like how its set up but what can I do.,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:15:41.122233+00:00,NEUTRAL,False
+106,If you do not receive it call immediately!,"They lost track of both of them, missed our event they were being used for.  1 1/2 week late.  Amazon customer service once we found how to call them were all over it.",NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:15:43.239996+00:00,NEGATIVE,True
+107,One Star,Cancelled an order paid with my gift card but balance did not reload. Beware.,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:15:45.011549+00:00,NEGATIVE,True
+108,No Gift,"This was supposed to be a gift card. I received notice from Amazon as well as a gift slip in the mail. When I clicked the flower pot, I was told to add $15 to my cart as though it was a purchase. I called Amaon and were unable to help me redeem the gift.",NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:15:46.924642+00:00,NEGATIVE,True
+109,Can’t use entire amount,I won’t purchase this type of gift card on Amazon again. You must use the entire EXACT amount or under the purchased amount in one purchase. If you only spend 35$ of a 50$ gift card then the other 15$ is no longer available. My daughter has 15$ left and it is not usable.,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:15:49.059423+00:00,NEUTRAL,False
+110,The gift card was great - the card - not so much,"Sent an Amazon giftcard to my son-in-law - filled out the amazon bday card - went back and double checked - all good.  Giftcard arrives with no wording in the card.  Took 2 days to figure out (small writing on the packing info) where it came from.  Have NEVER had an issue with Amazon - was a little bummed the bday card was blank.  Even went back on my account and saw the ""note"" section for the card filled out.",NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:16:00.182427+00:00,NEUTRAL,False
+111,It did not look like the card and package on the web site.,The card was bent and it did not come in a Silver Reveal as promised.,NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:16:02.528786+00:00,NEUTRAL,False
+112,SCAM!!!!!!!!!!,DO NOT BUY THEY DEACTIVATE IT BEFORE YOU GET IT.<br />Everyone is having problems I should of read reviews before buying but I didn’t think I had to. Thank you to the customer serious representative Sebastin for getting me my refund quick and easy.,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:16:04.948402+00:00,NEGATIVE,True
+113,Recipient didn’t know what it was!,It wasn’ta real gift card,NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:16:07.365903+00:00,NEGATIVE,True
+114,Its a gift card,... it’s a gift card ? Performed as advertised,POSITIVE,TRUST,"SENTIMENT: POSITIVE
+EMOTION: TRUST",True,,2026-09-29T01:16:09.135585+00:00,NEUTRAL,False
+115,Always works,This was a gift and it was well received.,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:16:11.413027+00:00,POSITIVE,True
+116,Easy to uograde,Great design,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:16:13.674087+00:00,POSITIVE,True
+117,... and I'm sure my teen-aged grandkids will be very pleased. At there ages now,"The pop-up is really cute and I'm sure my teen-aged grandkids will be very pleased. At there ages now, I hardly know what they would like for Christmas. Thanks!",POSITIVE,ANTICIPATION,"SENTIMENT: POSITIVE
+EMOTION: ANTICIPATION",True,,2026-09-29T01:16:16.179221+00:00,POSITIVE,True
+118,"Card arrives opened, what a miserable SCAM!!!","I received this card today and found the packaging was already opened. The pull tab that hides the bar code on the card was already removed, the same pull tab that says ""Do not sell if package has been tampered with or opened"". I called Nordstrom in attempts to validate the value on the card, if there is any, and they wanted a 16 digit number from the back of the card. This Nordstrom birthday ""Cake"" card has a copyright of 2018 and has a 30 digit number on the back, which Nordstrom is not able to validate.<br />This leaves me with a tampered with card that is likely completely WORTHLESS!<br /><br />The synopsis is, the card arrived opened and tampered with, 3 years old, and Nordstrom could not validate if there is any value on the card. This is a miserable SCAM!!!",NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:16:19.739711+00:00,NEGATIVE,True
+119,I choosed this GC because i couldnt pay with two ...,"I choosed this GC because i couldnt pay with two CC. It took a couple of verification days and a phone call to be active, maybe because I dont live in the US.",NEUTRAL,SURPRISE,"SENTIMENT: NEUTRAL
+EMOTION: SURPRISE",True,,2026-09-29T01:16:24.318681+00:00,NEUTRAL,True
+120,No lo he podido enviar al destinatario y es para regalar,No lo pude enviar a la persona para la que lo adquirí,NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:16:26.355200+00:00,NEGATIVE,True
+121,Offer not received,"I increased my acct reload from my usual $25.00 to $50.00 because of the offer I responded to. The offer said I would receive an extra $8.00 in my acct if I added $40.00 or more to my acct. I did so, but did not get the extra. I was disappointed.",NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:16:28.361668+00:00,NEUTRAL,False
+122,Easy to reload amazon care,Very easy to load an amazon card,POSITIVE,TRUST,"SENTIMENT: POSITIVE
+EMOTION: TRUST",True,,2026-09-29T01:16:32.428138+00:00,POSITIVE,True
+123,Security,"Getting money to this card is what has and will be show stopped for me. Not enough security for your site, I refuse to use your service until it's made easier for to use.",NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:16:34.260466+00:00,NEUTRAL,False
+124,waST OF MY MONEY AN TIME,you all wouldnt let put it on my own credit card an had to put money from credit to the reload crap o an something elese i better get it back to my credit card because i returned the order because it was nothin but crap i wouldnt give that trash to eneyone that i know .,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:16:40.461511+00:00,NEGATIVE,True
+125,Paid $25 for a blank gift card,Went to the restaurant to use this gift card and there was no value added to it. Do not purchase. It’s a scam.,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:16:42.888276+00:00,NEGATIVE,True
+126,One Star,could not book hotel stay with,NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:16:44.610282+00:00,NEGATIVE,True
+127,I was so happy when I saw this one with the description that ...,"The description indicated that the Punchcase would fit a Kindle.  Unfortunately it does not.  I have an original Kindle and it is difficult now to find cases that fit.  I was so happy when I saw this one with the description that it would fit a Kindle, but it did not.<br />I will say that your return policy is excellent and I thank you for that.",NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:16:46.347079+00:00,NEGATIVE,True
+128,Easy to reload,Ease of loading card,POSITIVE,TRUST,"SENTIMENT: POSITIVE
+EMOTION: TRUST",True,,2026-09-29T01:16:48.312884+00:00,NEUTRAL,False
+129,Five Stars,beautiful,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:16:50.612668+00:00,POSITIVE,True
+130,Five Stars,"Great gift for my son, he really liked the tin as well. Quick delivery by Amazon.",POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:16:52.481328+00:00,POSITIVE,True
+131,Uhh yea no thanks!,I’m not even going to do this whole process. It’s way worse.<br />Who are these mentally I’ll people that like this better now…?<br />It’s not worth the time  I used to be able to load from multiple places in a matter of minutes. Now it’d take much longer to add from a single source  …. Pretty stupid change Amazon. BOOOOOOOOO!!!👎👎👎👎👎,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:16:56.037329+00:00,NEGATIVE,True
+132,Question about my gift card!!,"The original amount of my gift card has not been accesses.  Why??  I would like to know the total balance left on the gift card, including the amount that was added.",NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:17:00.025320+00:00,NEGATIVE,True
+133,Five Stars,Quick and easy reload. No hassles. It was available almost instantly.,POSITIVE,TRUST,"SENTIMENT: POSITIVE
+EMOTION: TRUST",True,,2026-09-29T01:17:02.655445+00:00,POSITIVE,True
+134,Lmao sucks,Literally came bent in half thanks Amazon for an ungiftable gift🤩,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:17:06.632273+00:00,NEGATIVE,True
+135,I think it is a good gift card,I think it is  a good gift card.,POSITIVE,TRUST,"SENTIMENT: POSITIVE
+EMOTION: TRUST",True,,2026-09-29T01:17:11.447529+00:00,NEUTRAL,False
+136,Gift cards,I had ordered $400 worth of gift cards and wanted to use the Believe card face and card because they were for my church employees.<br />I was unable to do that and received the kindle fire card face which was confusing to me how the gift card could be used and the free card was not appropriate for the church occasion.  I had called your customer service person and he could not understand that I was wanting to get an appropriate fee card but couldn’t make him understand what the problem was.  I gave up and bought 5 appropriate cards at my own expense.<br />I will try another method next year!  Nancy Lain,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:17:13.803699+00:00,NEUTRAL,False
+137,Three Stars,"Card was great, unfortunately it got here 2 days after Christmas!",NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:17:17.903096+00:00,NEUTRAL,False
+138,Arrived on day promised,You have the option of them printing a message of your choosing in the card.  I did choose to write a few short words and the card arrived without the inscription inside.,NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:17:27.387489+00:00,NEUTRAL,False
+139,Perfect for Halloween!,Perfect color combo for Halloween. I was expecting a gold bow - as per picture -  but it is orange.<br />A gift card is a gift card but I will be shopping for new ribbon.,NEUTRAL,SADNESS,"SENTIMENT: NEUTRAL
+EMOTION: SADNESS",True,,2026-09-29T01:17:29.942043+00:00,NEUTRAL,True
+140,it didnt work,it didnt work .the promotion that amazone was offering when you buy gift card get $20 it didnt work,NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:17:31.812839+00:00,NEGATIVE,True
+141,Three Stars,I was very happy on how fast i got my reload.,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:17:34.889645+00:00,NEUTRAL,False
+142,Five Stars,Was very pleased!,POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:17:36.676979+00:00,POSITIVE,True
+143,Purchase was good but my Credit card details compromised,Product is good but I used my credit card for this purchase and next day onwards my credit card was unauthorizedly getting swiped at DELIVEROO in GBP(pounds) first 38£ n then 24£..had to block my credit card and reported fraudulenttransactions on my credit card..until this purchase my card was very secure..I need help in highlighting this issue to Amazon Information Security team..any leads pls help,NEGATIVE,FEAR,"SENTIMENT: NEGATIVE
+EMOTION: FEAR",True,,2026-09-29T01:17:39.576264+00:00,NEUTRAL,False
+144,Wouldn’t buy,Not as strong as i would like it to be.,NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:17:41.594042+00:00,NEUTRAL,False
+145,Did not receive promo -,Received gift card but not the $10 credit.  AMazon makes it difficult to reach them and get assistance.,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:17:43.472927+00:00,NEGATIVE,True
+146,I was very disappointed by the wrap and tag,The item arrived quickly.  I was very disappointed by the wrap and tag.....tag was mostly unreadable.  I will have to change it. I paid extra for the wrap.,NEGATIVE,SADNESS,"SENTIMENT: NEGATIVE
+EMOTION: SADNESS",True,,2026-09-29T01:17:49.801117+00:00,NEUTRAL,False
+147,BEWARE - Card Not Activated,"When I went to use this card, the restaurant wasn't able to process it. I called the number on the back and was informed this card had never been activated and has no value.",NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:17:53.590635+00:00,NEGATIVE,True
+148,NEVER ON TIME!,It’s useless to purchase a gift card from Amazon they’re never on time even though it says it will be…I will be mailing gifts to my grand baby’s from now on so they won’t be late! Screw these damn cards!,NEGATIVE,ANGER,"SENTIMENT: NEGATIVE
+EMOTION: ANGER",True,,2026-09-29T01:17:55.817520+00:00,NEGATIVE,True
+149,Scam,Do not buy this gift card got it set a pin and a day after I set the pin it got declined when I called I was told that my card had been used on a gaming website. In order to dispute it I have to fill out a form and send proof of purchase then maybe in 30 to 90 days I might get a new card this is total bs,,,,False,Process interrupted after request was sent; response not captured. Not retried to preserve one request per review.,,NEGATIVE,
+150,Like the convenience of no wrapping,"All were for gifts.  Like the convenience of no wrapping, being able to put them in the Christmas stockings...plus the good looks",POSITIVE,JOY,"SENTIMENT: POSITIVE
+EMOTION: JOY",True,,2026-09-29T01:19:06.697860+00:00,POSITIVE,True
