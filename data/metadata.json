@@ -1,0 +1,52 @@
+{
+  "seed": 20260929,
+  "python_version": "3.14.7",
+  "sampling_method": "Stratified reservoir sampling, Algorithm R, size 50 per rating group; one shared random.Random(seed) generator; rng.randrange(group_seen) called only after a group reservoir is full.",
+  "selection_order": "Entire gzip stream in original line order; final selected rows sorted by source line number.",
+  "label_timing": "Ratings used only for grouping during selection; correct_sentiment attached after EOF and selection completion.",
+  "rating_mapping": {
+    "4-5": "POSITIVE",
+    "3": "NEUTRAL",
+    "1-2": "NEGATIVE"
+  },
+  "dataset_url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_2023/raw/review_categories/Gift_Cards.jsonl.gz",
+  "local_source": "C:\\Users\\combs\\amazon_review_validation\\step6a\\data\\Gift_Cards.jsonl.gz",
+  "dataset_compressed_sha256": "e03a258ebd7b1e2591b09862aab65d3dcde9c300744d800aa1fbaf374b7c2340",
+  "script_sha256": "725c69022ca023ca5092abae36f54b07f360bc5e3e98c4b6a4e4dd9d97af8eec",
+  "created_utc": "2026-09-29T01:02:26.852213+00:00",
+  "sample_size": 150,
+  "class_counts": {
+    "POSITIVE": 50,
+    "NEGATIVE": 50,
+    "NEUTRAL": 50
+  },
+  "uniqueness_checks": [
+    "source line",
+    "source line SHA-256",
+    "canonical complete review",
+    "user_id + parent_asin + timestamp"
+  ],
+  "filtering": "Only nonnumeric or out-of-range ratings excluded; no filtering by title/text, sentiment, or earlier sample membership. Malformed JSON fails. Duplicate selected reviews fail validation rather than being silently replaced.",
+  "population": {
+    "review_count": 152410,
+    "eligible_rating_group_counts": {
+      "1-2": 14199,
+      "3": 3271,
+      "4-5": 134940
+    },
+    "star_rating_counts": {
+      "1": 12326,
+      "2": 1873,
+      "3": 3271,
+      "4": 6692,
+      "5": 128248
+    },
+    "invalid_rating_reviews_skipped": 0,
+    "uncompressed_stream_sha256": "b7ceead0dd6378eebfc6f4736402f85cc08e8dcb328f813c95ca68fc62d9544e"
+  },
+  "model_calls": 0,
+  "output_sha256": {
+    "balanced_sample.json": "843f1a647dffef9dd9a7c4c8866a8d7a49edc46ddfeeed46e719c8135b7f348a",
+    "balanced_sample.csv": "8a3f2b3b0248315e21b744d513b51791cd4054782a8d54102e7ef5c688b2508a"
+  }
+}
